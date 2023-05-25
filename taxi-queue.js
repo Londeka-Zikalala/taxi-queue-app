@@ -46,8 +46,9 @@ var taxiInQueue= [];
 		  taxiCount--;
 		  commuterCount -= 12;
 		}
+		return taxiCount
 	  }
-	  
+
 	  function taxiQueueLength(){
 		return taxiCount
 	}
