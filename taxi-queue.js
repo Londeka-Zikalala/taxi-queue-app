@@ -42,11 +42,12 @@ var taxiInQueue= [];
 
 
 	function taxiDepart() {
-		if (commuterInQueue.length >= 12 && taxiCount > 0) {
-		  taxiCount--;
-		  commuterCount -= 12;
+		var taxisDeparted = Math.floor(commuterCount / 12);
+		if(commuterInQueue.length>= 12 && taxiCount > 0){
+		taxiCount -= taxisDeparted;
+		commuterCount -= taxisDeparted * 12;
 		}
-		return taxiCount
+		return taxisDeparted;
 	  }
 
 	  function taxiQueueLength(){
