@@ -26,11 +26,10 @@ function taxiJoin() {
   // Get local storage key 
   const countsKey = 'queueCounts'
 // parse the values and add to the local storage
-var taxiQueue = JSON.parse(localStorage.getItem(countsKey));
-if (!taxiQueue) {
-  taxiQueue = TaxiQueue();
-  addToLocalStorage();
-}
+let taxiQueue = JSON.parse(localStorage.getItem(countsKey)) || {
+    taxiCount: 0,
+    commuterCount: 0
+  };
 // get values from the local storage
 function addToLocalStorage() {
     localStorage.setItem(countsKey, JSON.stringify(taxiQueue));
